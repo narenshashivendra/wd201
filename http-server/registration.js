@@ -96,7 +96,7 @@ function loadEntriesFromLocalStorage() {
         newRow.appendChild(dobCell);
 
         const termsCell = document.createElement('td');
-        termsCell.textContent = entry.termsAccepted ? 'Yes' : 'No';
+        termsCell.textContent = entry.termsAccepted ? 'true' : 'false';
         newRow.appendChild(termsCell);
 
         tableBody.appendChild(newRow);
