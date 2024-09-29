@@ -18,6 +18,15 @@ const tomorrow = formattedDate(
   new Date(new Date().setDate(dateToday.getDate() + 1)),
 );
 
+  const toDisplayableList = (list) => {
+    return list.map((todoItem, index) => {
+      const prefix = `${index + 1}. [${todoItem.completed ? 'x' : ' '}] `
+      const title = todoItem.title
+      const suffix = todoItem.dueDate === formattedDate(new Date()) ? '' : ` (${todoItem.dueDate})`
+      return prefix + title + suffix
+    }).join('\n')
+  }
+
 describe("Todolist Test Suite", () => {
   beforeAll(() => {
     [
